@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Health Insights</title>
+    <style>
+        /* General page styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #e0f7fa 30%, #b2dfdb 100%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #37474f;
+        }
+
+        h1 {
+            color: #00695c;
+            margin-bottom: 20px;
+            font-size: 38px;
+            font-weight: 700;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: fadeInDown 1s ease-in-out;
+        }
+
+        h2 {
+            color: #004d40;
+            margin: 10px 0;
+            font-size: 24px;
+            font-weight: 400;
+            text-align: center;
+            letter-spacing: 1px;
+            animation: fadeInDown 1.2s ease-in-out;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 40px;
+            margin: 20px 10px;
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 15px 0;
+            color: #37474f;
+        }
+
+        p strong {
+            font-size: 22px;
+            color: #d32f2f;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        a {
+            font-size: 18px;
+            text-decoration: none;
+            color: white;
+            background-color: #00897b;
+            padding: 12px 30px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            margin-top: 30px;
+            display: inline-block;
+            animation: fadeInUp 1.7s ease-in-out;
+        }
+
+        a:hover {
+            background-color: #004d40;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            a {
+                padding: 10px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>AI-based Plant Health Insights 🌱</h1>
+    <h2>Empowering Agriculture with Advanced Technology</h2>
+    
+    <div class="container">
+        <p>Your uploaded image has been analyzed, and our AI model has detected the following disease:</p>
+        <p><strong>Predicted Disease:</strong> {{ prediction }}</p>
+        <a href="{{ url_for('homepage') }}">Analyze Another Image</a>
+    </div>
+</body>
+</html>

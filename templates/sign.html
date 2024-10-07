@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Agri-Diagnosis</title>
+    
+    <!-- Link the SignUp.css using Flask's url_for function -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='sign.css') }}">
+</head>
+<body>
+    <div class="background-container">
+        <!-- Navigation Bar -->
+        <nav>
+            <div class="logo">
+                <img src="{{ url_for('static', filename='MP_images/logo.png') }}" alt="AgriDiagnosis Logo">
+                <h1>Agri-Diagnosis</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('homepage') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('homepage') }}">Services</a></li>
+                <li><a href="{{ url_for('homepage') }}">Contact</a></li>
+            </ul>
+            <div class="buttons">
+                <!-- Wrap the buttons inside anchor tags to link to the login and signup routes -->
+                <a href="{{ url_for('log') }}">
+                    <button class="login-btn">Log In</button>
+                </a>
+                <a href="{{ url_for('sign') }}">
+                    <button class="signup-btn">Sign Up</button>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Sign-Up Form -->
+        <div class="signup-container">
+            <h2>Sign Up to Agri-Diagnosis</h2>
+            <form class="signup-form">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter your username" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email address" required>
+                </div>
+                <div class="input-group">
+                    <label for="mobile">Mobile Number</label>
+                    <input type="tel" id="mobile" placeholder="Enter your mobile number" required>
+                </div>
+                <div class="input-group">
+                    <label for="address">Address</label>
+                    <textarea id="address" placeholder="Enter your address" required></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Create a password" required>
+                </div>
+                <div class="input-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+                </div>
+                <button type="submit" class="submit-btn">Sign Up</button>
+            </form>
+
+            <div class="additional-links">
+                <p>Already have an account? <a href="#">Log In here</a></p>
+                <p><a href="#">Forgot password?</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

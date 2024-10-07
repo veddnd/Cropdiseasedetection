@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Disease Detection</title>
+    <style>
+        /* General page styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #a5d6a7 30%, #c8e6c9 100%); /* Gradient background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #5d4037; /* Earthy brown */
+        }
+
+        /* Container for the form */
+        .container {
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+            padding: 40px 50px;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        /* Title styling */
+        h1 {
+            color: #388e3c; /* Green */
+            margin-bottom: 15px;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        /* Leaves icon styling */
+        .icon {
+            width: 140px; /* Large size */
+            height: auto;
+            margin-bottom: 30px;
+            animation: bounce 1.5s infinite; /* Add animation */
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Label and input styling */
+        label {
+            font-size: 20px;
+            color: #5d4037; /* Earthy brown */
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        input[type="file"] {
+            font-size: 16px;
+            padding: 12px;
+            margin: 10px 0;
+            background-color: #f0f4c3; /* Light green background */
+            border: 1px solid #c5e1a5; /* Light border */
+            border-radius: 8px;
+            transition: border 0.3s;
+        }
+
+        input[type="file"]:hover {
+            border: 1px solid #388e3c; /* Green border on hover */
+        }
+
+        /* Submit button styling */
+        input[type="submit"] {
+            background-color: #43a047; /* Green */
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        input[type="submit"]:hover {
+            background-color: #388e3c; /* Darker green */
+            transform: translateY(-2px); /* Lift effect */
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 25px;
+            font-size: 16px;
+            color: #6d4c41;
+            font-weight: 500;
+            text-align: center; /* Center align footer text */
+            width: 100%;
+            position: absolute; /* Position footer at the bottom */
+            bottom: 20px; /* Distance from the bottom */
+        }
+
+        /* Responsive styles */
+        @media (max-width: 500px) {
+            .container {
+                padding: 30px 40px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            input[type="submit"] {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://img.icons8.com/ios-filled/140/388e3c/leaves.png" alt="Leaves Icon" class="icon">
+        <h1>Plant Disease Detection</h1>
+        <form action="{{ url_for('predict') }}" method="post" enctype="multipart/form-data">
+            <label for="file">Upload an image of the plant:</label>
+            <input type="file" id="file" name="file" accept="image/*" required><br>
+            <input type="submit" value="Predict Disease">
+        </form>
+    </div>
+
+    <footer>
+        <p>Providing farmers with AI-based plant health insights 🌿 | Agridiagnosis</p>
+    </footer>
+</body>
+</html>

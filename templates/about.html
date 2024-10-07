@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Agri-Diagnosis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+</head>
+<body>
+    <div class="background-container">
+        <!-- Navigation Bar -->
+        <nav>
+            <div class="logo">
+                <img src="{{ url_for('static', filename='MP_images/logo.png') }}" alt="AgriDiagnosis Logo">
+                <h1>Agri-Diagnosis</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('homepage') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('homepage') }}">Services</a></li>
+                <li><a href="{{ url_for('homepage') }}">Contact</a></li>
+            </ul>
+            <div class="buttons">
+                <!-- Wrap the buttons inside anchor tags to link to the login and signup routes -->
+                <a href="{{ url_for('log') }}">
+                    <button class="login-btn">Log In</button>
+                </a>
+                <a href="{{ url_for('sign') }}">
+                    <button class="signup-btn">Sign Up</button>
+                </a>
+            </div>
+        </nav>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <h2>About Agri-Diagnosis</h2>
+            <p>Agri-Diagnosis is an AI-powered platform designed to assist farmers in identifying plant diseases, receiving expert consultations, and making informed decisions to ensure the health of their crops. We are dedicated to providing innovative tools to empower farmers and improve their yield.</p>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services">
+            <h3>Our Key Services</h3>
+            <div class="services-grid">
+                <!-- Disease Detection -->
+                <div class="service-item fade-in">
+                    
+                    <img src="{{ url_for('static', filename='MP_images/diseas detection.jpg') }}"  alt="Disease Detection">
+                    <h4>Disease Detection</h4>
+                    <p>Upload an image of a diseased plant and receive instant AI-based analysis and recommendations for treatment.</p>
+                </div>
+                <!-- Expert Consultation -->
+                <div class="service-item fade-in">
+                    <img src="{{ url_for('static', filename='MP_images/expert consultation.jpeg') }}" alt="Expert Consultation">
+                    <h4>Expert Consultation</h4>
+                    <p>Connect with agricultural experts to get personalized advice on managing plant diseases and improving your crop health.</p>
+                </div>
+                <!-- Weather Alerts -->
+                <div class="service-item fade-in">
+                    
+                    <img src="{{ url_for('static', filename='MP_images/whether.webp') }}" alt="Weather Alerts">
+                    <h4>Weather Alerts</h4>
+                    <p>Receive timely weather updates and alerts to make informed decisions about spraying, irrigation, and crop care.</p>
+                </div>
+                <!-- Product Recommendations -->
+                <div class="service-item fade-in">
+                    
+                    <img src="{{ url_for('static', filename='MP_images/pesticide.jpeg') }}" alt="Product Recommendations">
+                    <h4>Product Recommendations</h4>
+                    <p>Find the right pesticides and equipment based on AI analysis and expert advice, all available through partner e-commerce platforms.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="team">
+            <h3>Meet Our Team</h3>
+            <div class="team-grid">
+                <div class="team-member slide-up">
+                    
+                    <img src="{{ url_for('static', filename='MP_images/team1.jpg') }}" alt="Team Member 1">
+                    <h4>Vaish</h4>
+                    <p>Founder & AI Expert</p>
+                </div>
+                <div class="team-member slide-up">
+                    <img src= "{{ url_for('static', filename='MP_images/team2.jpg') }}" alt="Team Member 2">
+                    <h4>Ravi</h4>
+                    <p>Agricultural Expert</p>
+                </div>
+                <div class="team-member slide-up">
+                    
+                    <img src="{{ url_for('static', filename='MP_images/team3.jpg') }}" alt="Team Member 3">
+                    <h4>Sneha</h4>
+                    <p>Data Scientist</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <script src="{{ url_for('static', filename='about.js') }}"></script>
+</body>
+</html>

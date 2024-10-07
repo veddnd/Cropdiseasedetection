@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+header {
+    height: 100vh;
+    background: url('MP_images/bgfinal.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 40px; */
+    padding-left: 40px;
+    padding-right: 60px;
+    
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: large;
+}
+
+.logo img {
+    width:150px;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 80px;
+}
+
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
+}
+.nav-links li a:hover{
+    color: #27ae60;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.login-btn,
+.signup-btn {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.login-btn {
+    background-color: #2E7D32;
+    color: #fff;
+}
+
+.signup-btn {
+    background-color: #fff;
+    color: #2E7D32;
+    border: 1px solid #2E7D32;
+}
+.login-btn:hover, .signup-btn:hover {
+    background-color: white;
+    color: #4caf50;
+    cursor: pointer;
+}
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: left;
+    text-align: left;
+    flex-grow: 1;
+    color: rgb(255, 255, 255);
+    margin-left: 400px;
+    margin-bottom: 100px;
+}
+
+.hero-section h2 {
+    font-size: 4em;
+    line-height: 1.2;
+}
+
+.hero-section h2 span {
+    color: #2E7D32;
+}
+
+.hero-section p {
+    margin: 20px 0;
+    font-size: 1.7em;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.cta-btn {
+    padding: 10px 30px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.get-started {
+    background-color: #fff;
+    color: #2E7D32;
+}
+
+.explore {
+    background-color: #2E7D32;
+    color: #fff;
+}

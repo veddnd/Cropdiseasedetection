@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriDiagnosis</title>
+    
+    <!-- Link the CSS properly using Flask's url_for function -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='homepage.css') }}">
+
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <!-- Use url_for to dynamically generate the path for the image -->
+                <img src="{{ url_for('static', filename='MP_images/logo.png') }}" alt="AgriDiagnosis Logo">
+                <h1>Agri-Diagnosis</h1>
+            </div>
+            <ul class="nav-links">
+                <!-- Set the Home link to point to the home route -->
+                <li><a href="{{ url_for('homepage') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('homepage') }}">Services</a></li>
+                <li><a href="{{ url_for('homepage') }}">Contact</a></li>
+            </ul>
+            <div class="buttons">
+                <!-- Wrap the buttons inside anchor tags to link to the login and signup routes -->
+                <a href="{{ url_for('log') }}">
+                    <button class="login-btn">Log In</button>
+                </a>
+                <a href="{{ url_for('sign') }}">
+                    <button class="signup-btn">Sign Up</button>
+                </a>
+            </div>
+            
+        </nav>
+        <div class="hero-section">
+            <h2>Empowering <span>Farmers</span>,<br> Nurturing India !</h2>
+            <p>We offer instant crop disease detection,<br>tailored solutions,and expert guidance to help farmers<br>protect their crops and make smarter decisions.</p>
+            <div class="cta-buttons">
+                <!-- Wrap buttons in anchor tags to link to the respective routes -->
+                <a href="{{ url_for('upload') }}">
+                    <button class="cta-btn get-started">Get Started</button>
+                </a>
+                <a href="{{ url_for('about') }}">
+                    <button class="cta-btn explore">Explore</button>
+                </a>
+            </div>
+            
+        </div>
+    </header>
+</body>
+</html>

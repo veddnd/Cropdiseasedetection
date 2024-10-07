@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agridiagnosis - Early Disease Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='upload.css') }}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='MP_images/logo.png') }}" alt="AgriDiagnosis Logo">
+            <h1>Agri-Diagnosis</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('homepage') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('homepage') }}">Services</a></li>
+            <li><a href="{{ url_for('homepage') }}">Contact</a></li>
+        </ul>
+        <div class="buttons">
+            <!-- Wrap the buttons inside anchor tags to link to the login and signup routes -->
+            <a href="{{ url_for('log') }}">
+                <button class="login-btn">Log In</button>
+            </a>
+            <a href="{{ url_for('sign') }}">
+                <button class="signup-btn">Sign Up</button>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content: Benefits and Steps Section -->
+    <section class="main-container">
+        <div class="left-section fade-in">
+            <h2>Benefits of Early Disease Detection</h2>
+            <div class="benefit">
+                <img src="{{ url_for('static', filename='MP_images/increased_yield.webp') }}" alt="Increase Yield">
+                <p><strong>Increase Yield:</strong> Early detection helps prevent crop damage, ensuring higher productivity.</p>
+            </div>
+            <div class="benefit">
+                <img src="{{ url_for('static', filename='MP_images/cost_saving.webp') }}" alt="Save Costs">
+                <p><strong>Save Costs:</strong> Early action minimizes expensive treatments, saving money.</p>
+            </div>
+            <div class="benefit">
+                <img src="{{ url_for('static', filename='MP_images/eco_friendly.webp') }}" alt="Eco-friendly">
+                <p><strong>Eco-Friendly:</strong> Reduces pesticide overuse, protecting the environment.</p>
+            </div>
+            <div class="benefit">
+                <img src="{{ url_for('static', filename='MP_images/prevent.jpeg') }}" alt="Prevent Spread">
+                <p><strong>Prevent Spread:</strong> Stops diseases from affecting other crops, reducing overall losses.</p>
+            </div>
+        </div>
+
+        <div class="right-section fade-in">
+            <h2>Steps to Get solutions</h2>
+            <div class="step">
+                
+                
+                <img src="{{ url_for('static', filename='MP_images/capture.webp') }}" alt="Step 1">
+                <p><strong>Step 1:</strong> Capture a clear image of the infected plant part.</p>
+            </div>
+            <div class="step">
+                
+                <img src="{{ url_for('static', filename='MP_images/upload_final.png') }}" alt="Step 2">
+                <p><strong>Step 2:</strong> Click the 'Upload' button below and select the image file.</p>
+            </div>
+            <div class="step">
+                
+                <img src="{{ url_for('static', filename='MP_images/wait.jpg') }}" alt="Step 3">
+                <p><strong>Step 3:</strong> Wait for the system to analyze the image and provide a diagnosis.</p>
+            </div>
+            <div class="step">
+                <img src="{{ url_for('static', filename='MP_images/results.jpeg') }}" alt="Step 4">
+                <p><strong>Step 4:</strong> Review the results and take recommended actions.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="upload-section fade-in">
+        <h2>Upload Your Plant Image <br> Get Solution!!</h2>
+        <form action="{{ url_for('predict') }}" method="post" enctype="multipart/form-data">
+            <input type="file" id="plant-image" name="file" accept="image/*" required>
+            <br><button type="submit" >Upload</button></br>
+        </form>
+    </section>
+    
+
+    
+
+    <!-- FAQ Section -->
+    <section class="faq-section fade-in">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq">
+            <h3>How does the detection system work?</h3>
+            <p>Our system uses advanced machine learning models to analyze images of plants and detect diseases based on patterns and visual symptoms.</p>
+        </div>
+        <div class="faq">
+            <h3>What should I do if the image is not clear?</h3>
+            <p>Try to capture the infected area in good lighting and ensure it is in focus. A clear image will result in better diagnosis accuracy.</p>
+        </div>
+        <div class="faq">
+            <h3>What kind of plants can the system detect?</h3>
+            <p>The system currently supports a wide range of crops, including wheat, rice, maize, and fruits. We are continuously adding support for more crops.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Agridiagnosis. All rights reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='upload.js') }}"></script>
+</body>
+</html>

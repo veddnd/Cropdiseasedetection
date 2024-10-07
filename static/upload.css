@@ -1,0 +1,254 @@
+/* General styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f9f0;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 40px; */
+    padding-left: 40px;
+    padding-right: 60px;
+    
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: large;
+}
+
+.logo img {
+    width:150px;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 80px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
+}
+.nav-links li a:hover{
+    color: #27ae60;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.login-btn,
+.signup-btn {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.login-btn {
+    background-color: #2E7D32;
+    color: #fff;
+}
+
+.signup-btn {
+    background-color: #fff;
+    color: #2E7D32;
+    border: 1px solid #2E7D32;
+}
+.signup-btn:hover {
+    background-color: white;
+    color: #4caf50;
+    cursor: pointer;
+}
+
+/* Main content sections */
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    flex: 1;
+}
+
+.left-section, .right-section {
+    width: 47%;
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+.left-section {
+    animation-delay: 0.2s;
+}
+
+.right-section {
+    animation-delay: 0.4s;
+}
+
+.left-section h2, .right-section h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8em;  /* Increased heading font size */
+}
+
+.benefit, .step {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    transition: transform 0.3s;
+}
+
+.benefit:hover, .step:hover {
+    transform: scale(1.05);
+}
+
+.benefit img, .step img {
+    width: 70px;
+    height: 70px;
+    margin-right: 15px;
+    border-radius: 8px;
+}
+
+.benefit p, .step p {
+    font-size: 1.3em;  /* Increased text font size */
+    margin: 0;
+    line-height: 1.6em;
+}
+
+.benefit p strong, .step p strong {
+    color: #28a745;
+}
+
+/* Extra information section */
+
+
+/* Upload section */
+.upload-section {
+    text-align: center;
+    margin: 30px 0;
+    background-color: #f7fff7;
+    padding: 25px;
+    border-radius: 8px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 0.8s;
+}
+
+.upload-section h2 {
+    margin-bottom: 20px;
+    font-size: 2em;  /* Increased heading size */
+    color: #333;
+}
+
+input[type="file"] {
+    padding: 12px;
+    font-size: 1.2em;  /* Increased input font size */
+    margin: 15px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;  /* Increased button font size */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* FAQ section */
+.faq-section {
+    padding: 25px;
+    background-color: #fff;
+    margin: 20px auto;
+    width: 90%;
+    border-radius: 8px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 1s;
+}
+
+.faq-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;  /* Increased font size */
+}
+
+.faq h3 {
+    cursor: pointer;
+    position: relative;
+    font-size: 1.5em;  /* Increased font size */
+    padding-right: 25px;
+}
+
+.faq h3::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    font-size: 1.5em;
+}
+
+.faq.open h3::after {
+    content: '-';
+}
+
+.faq p {
+    font-size: 1.3em;  /* Increased font size */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.faq.open p {
+    max-height: 200px;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    background-color: #28a745;
+    color: white;
+    padding: 20px;
+    margin-top: auto;
+    font-size: 1.3em;  /* Increased font size */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-section, .right-section {
+        width: 90%;
+    }
+}
